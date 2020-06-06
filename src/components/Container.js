@@ -7,7 +7,10 @@ const Container = () => {
   const [shoppingListItems, setShoppingListItems] = useState([]);
   const [newItemTitle, setNewItemTitle] = useState("");
   const handleGroceryItemClick = (event) => {
-    const title = event.target.querySelector("span").innerHTML;
+    let title;
+    event.target.className === "list-item"
+      ? (title = event.target.querySelector("span").innerHTML)
+      : (title = event.target.innerHTML);
     setShoppingListItems((prevShoppingListItems) => {
       const item = prevShoppingListItems.find((item) => item.title === title);
       const newShoppingListItems = [...prevShoppingListItems];
