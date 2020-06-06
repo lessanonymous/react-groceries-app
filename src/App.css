@@ -17,8 +17,14 @@ header {
   display: grid;
   grid-template-columns: repeat(2, 45%);
   padding: 2rem 0;
-  column-gap: 2rem;
+  gap: 2rem;
   justify-content: center;
+}
+
+@media (max-width: 767.98px) {
+  .container {
+    grid-template-columns: 90%;
+  }
 }
 
 .container > div {
